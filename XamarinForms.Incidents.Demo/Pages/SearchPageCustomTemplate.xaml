@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamarinForms.Incidents.Demo.SearchPageCustomTemplate">
+
+   <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" 
+                    iOS="0, 20, 0, 0" 
+                    Android="0, 0, 0, 0" 
+                    WinPhone="0, 0, 0, 0" />
+    </ContentPage.Padding>
+
+     <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Incidents" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <SearchBar x:Name="searchBar" Placeholder="Search" />
+
+            <ListView x:Name="incidentsLV">
+               <ListView.ItemTemplate>
+                 <DataTemplate>
+                     <TextCell Text="{Binding Title}" 
+                               Detail="{Binding ReportedBy, StringFormat='Reported By {0}'}" />
+                 </DataTemplate>
+               </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamarinForms.Incidents.Demo.IncidentsPage"
+             Title="Incident Information">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="10,20, 10, 0" VerticalOptions="Start">
+              
+                <StackLayout>
+                    <Label Text="Title:" FontSize="Small" />
+                    <Entry Text="{Binding Title}" />
+                </StackLayout>
+                  <StackLayout>
+                    <Label Text="Reported By:" FontSize="Small" />
+                    <Entry Text="{Binding ReportedBy}" />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Event Date:" FontSize="Small" />
+                    <Entry Text="{Binding DateOccurred, StringFormat='{0:d MMMM yyyy}'}" />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Event Location:" FontSize="Small" />
+                    <Entry Text="{Binding Location}" />
+                </StackLayout>
+                <Button x:Name="saveButton" Text="Save" TextColor="White" BackgroundColor="#77D065" />
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
