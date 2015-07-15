@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="XamarinForms.Incidents.Demo.Pages.IncidentsPage"
-             Title="Incident Information">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="XamarinForms.Incidents.Demo.Pages.IncidentsEditDetailPage">	
+   
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="20" Padding="10,20, 10, 0" VerticalOptions="Start">
+            <StackLayout Spacing="20" 
+            			 Padding="10,20, 10, 0" 
+            			 VerticalOptions="Start"
+            			 BindingContext ="{Binding Model}">
               
                 <StackLayout>
                     <Label Text="Title:" FontSize="Small" />
@@ -15,16 +18,18 @@
                     <Label Text="Reported By:" FontSize="Small" />
                     <Entry Text="{Binding ReportedBy}" />
                 </StackLayout>
-                <StackLayout>
+                <StackLayout x:Name="dateStack">
                     <Label Text="Event Date:" FontSize="Small" />
-                    <Entry Text="{Binding DateOccurred, StringFormat='{0:d MMMM yyyy}'}" />
+                    <Label Text="{Binding DateOccurred, StringFormat='{0:d MMMM yyyy}'}" />
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Event Location:" FontSize="Small" />
                     <Entry Text="{Binding Location}" />
                 </StackLayout>
                 <Button x:Name="saveButton" Text="Save" TextColor="White" BackgroundColor="#77D065" />
-            </StackLayout>
+                <Button x:Name="resetButton" Text="Reset" TextColor="White" BackgroundColor="#FF3050" />
+          
+             </StackLayout>
         </ScrollView>
 
     </ContentPage.Content>

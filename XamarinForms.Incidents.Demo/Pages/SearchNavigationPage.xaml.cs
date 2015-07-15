@@ -3,8 +3,10 @@ using System.Linq;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using XamarinForms.Incidents.Demo.Services;
+using XamarinForms.Incidents.Demo.Models;
 
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Pages
 {
     public partial class SearchNavigationPage : ContentPage
     {
@@ -46,12 +48,7 @@ namespace XamarinForms.Incidents.Demo
         {
             return service.RetrieveIncidents ().Where (i => i.Title.Contains (text, StringComparison.CurrentCultureIgnoreCase));
         }
-
-        protected override void OnAppearing ()
-        {
-            base.OnAppearing ();
-           
-        }
+            
     }
 }
 

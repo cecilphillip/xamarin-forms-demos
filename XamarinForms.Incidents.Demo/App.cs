@@ -1,6 +1,5 @@
-﻿using System;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using XamarinForms.Incidents.Demo.Pages;
 
 namespace XamarinForms.Incidents.Demo
 {

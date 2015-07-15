@@ -5,7 +5,7 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-namespace XamarinForms.Incidents.Demo.UITests
+namespace XamarinForms.Incidents.Demo.Pages
 {
     [TestFixture (Platform.Android)]
     [TestFixture (Platform.iOS)]

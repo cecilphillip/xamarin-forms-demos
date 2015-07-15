@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Pages
 {
     public partial class IncidentsAboutDetailPage : ContentPage
     {

@@ -68,4 +68,10 @@ Global
 		{D702F499-DCB9-441D-A6FD-CFE53BB9DC6E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{D702F499-DCB9-441D-A6FD-CFE53BB9DC6E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedFlat
+		$1.ResourceNamePolicy = FileFormatDefault
+	EndGlobalSection
 EndGlobal

@@ -3,8 +3,10 @@ using System.Linq;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using XamarinForms.Incidents.Demo.Services;
+using XamarinForms.Incidents.Demo.Models;
 
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Pages
 {
     public partial class SearchXamlPage : ContentPage
     {

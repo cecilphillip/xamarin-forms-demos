@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
-
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Models
 {
     public class IncidentMasterVm : BaseViewModel
     {
@@ -19,5 +17,3 @@ namespace XamarinForms.Incidents.Demo
         }
     }
 }
-
-

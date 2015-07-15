@@ -1,9 +1,11 @@
 ﻿using System;
+using SQLite.Net.Attributes;
 
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Models
 {
     public class Incident
     {
+		[PrimaryKey, AutoIncrement]
         public int ID {
             get;
             set;

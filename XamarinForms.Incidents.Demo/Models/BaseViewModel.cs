@@ -1,10 +1,9 @@
 ﻿using System;
-using Xamarin.Forms;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Models
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
@@ -33,7 +32,6 @@ namespace XamarinForms.Incidents.Demo
 
         protected void SetProperty<T> (ref T backingStore, T value, [CallerMemberName]string propertyName = null, Action onChanged = null)
         {
-
             if (EqualityComparer<T>.Default.Equals (backingStore, value))
                 return;
 

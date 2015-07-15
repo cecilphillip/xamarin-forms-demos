@@ -3,12 +3,13 @@ using System.Linq;
 
 using Xamarin.Forms;
 using System.Collections.Generic;
+using XamarinForms.Incidents.Demo.Models;
 
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Pages
 {
     public class IncidentsMasterDetailPage : MasterDetailPage
     {
-        private IncidentMasterVm ViewModel {
+        IncidentMasterVm ViewModel {
             get { return BindingContext as IncidentMasterVm; }
         }
 
@@ -31,12 +32,8 @@ namespace XamarinForms.Incidents.Demo
 
             cachedPages.Add ("AboutPage", homeNav);
 
-            master.PageSelectionChanged = async (key) => {
-
-                if (Detail != null && Device.OS == TargetPlatform.WinPhone) {
-                    await Detail.Navigation.PopToRootAsync ();
-                }
-
+            master.PageSelectionChanged = (key) => {
+                
                 NavigationPage newPage;
                 if (cachedPages.ContainsKey (key)) {
                     newPage = cachedPages [key];
@@ -54,101 +51,7 @@ namespace XamarinForms.Incidents.Demo
             };
 
             this.Icon = "slideout.png";
-
         }
-    }
-
-    public class IncidentMasterPage: ContentPage
-    {
-        public Action<string> PageSelectionChanged;
-
-        private Page pageSelection;
-        private string cacheKey;
-
-        public Page PageSelection {
-            get { return pageSelection; }
-            set {
-                pageSelection = value;
-                if (PageSelectionChanged != null)
-                    PageSelectionChanged (cacheKey);
-            }
-        }
-
-        private Page about, searchPage, editIncident;
-
-        public IncidentMasterPage (IncidentMasterVm vm)
-        {           
-            BindingContext = vm;
-            SetBinding (Page.TitleProperty, new Binding (BaseViewModel.TitlePropertyName));
-
-            this.Icon = "slideout.png";
-
-            var layout = new StackLayout { Spacing = 0 };
-
-            var label = new ContentView {
-                Padding = new Thickness (10, 36, 0, 5),
-                BackgroundColor = Color.Transparent,
-                Content = new Label {
-                    Text = "MENU",
-                    FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label))
-                }
-            };
-
-            layout.Children.Add (label);
-
-            var listView = new ListView ();
-           
-            DataTemplate cell = new DataTemplate (typeof(TextCell));
-            cell.SetBinding (TextCell.TextProperty, IncidentMasterVm.TitlePropertyName);
-           
-
-            listView.ItemTemplate = cell;
-
-            listView.ItemsSource = vm.NavItems;
-            if (about == null) {                
-                about = new IncidentsAboutDetailPage ();
-            }
-
-            cacheKey = "AboutPage";
-            PageSelection = about;
-
-            listView.ItemSelected += (sender, args) => {
-
-                var menuItem = listView.SelectedItem as MasterNavItem;
-                cacheKey = menuItem.CacheKey;
-
-                switch (menuItem.CacheKey) {
-                case "AboutPage":
-                    if (about == null)
-                        about = new IncidentsAboutDetailPage ();
-
-                    PageSelection = about;
-                    break;
-                case "IncidentsPage":
-                    if (searchPage == null)
-                        searchPage = new SearchNavigationPage ();
-
-                    PageSelection = searchPage;
-                    break;
-                case "NewIncidentPage":
-                    if (editIncident == null)
-                        //TODO: Replace this page
-                        editIncident = new IncidentsPage (null);
-
-                    PageSelection = editIncident;
-                    break;            
-                }
-
-                listView.SelectedItem = null;
-            };
-
-            layout.Children.Add (listView);
-
-            Content = layout;
-
-        }
-        
     }
 }
-
 

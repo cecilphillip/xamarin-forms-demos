@@ -8,7 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace XamarinForms.Incidents.Demo.Droid
+namespace XamarinForms.Incidents.Demo.Pages
 {
     [Activity (Label = "XamarinForms.Incidents.Demo.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity

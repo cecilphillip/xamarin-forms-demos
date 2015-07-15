@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace XamarinForms.Incidents.Demo.iOS
+namespace XamarinForms.Incidents.Demo.Pages
 {
     public class Application
     {

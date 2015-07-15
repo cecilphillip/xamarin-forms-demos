@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Xamarin.Forms;
+using XamarinForms.Incidents.Demo.Models;
 
-using Xamarin.Forms;
-
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Pages
 {
     public partial class IncidentsPage : ContentPage
     {
@@ -12,9 +10,7 @@ namespace XamarinForms.Incidents.Demo
             InitializeComponent ();
             BindingContext = incident;
 
-            saveButton.Clicked += async (sender, e) => {
-                await DisplayAlert ("Alert", "You updated an incident", "Ok");
-            };
+            saveButton.Clicked += async (sender, e) => await DisplayAlert ("Alert", "You updated an incident", "Ok");
         }
     }
 }

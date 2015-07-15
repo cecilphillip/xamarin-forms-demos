@@ -1,7 +1,5 @@
-using System;
 
-
-namespace XamarinForms.Incidents.Demo
+namespace XamarinForms.Incidents.Demo.Models
 {
     public class MasterNavItem
     {
