@@ -2,6 +2,8 @@ using System.Collections.ObjectModel;
 using XamarinForms.Incidents.Demo.Services;
 using System.Linq;
 using System;
+using Xamarin.Forms;
+using System.Windows.Input;
 
 namespace XamarinForms.Incidents.Demo.Models
 {
@@ -14,6 +16,8 @@ namespace XamarinForms.Incidents.Demo.Models
         public IncidentsSearchDetailVm() : this (new SQLiteIncidentService())
         {          
         }
+
+        public ICommand GoToNewIncidentPage { get; set;}
 
         public IncidentsSearchDetailVm(IIncidentService svc)
         {
@@ -31,8 +35,7 @@ namespace XamarinForms.Incidents.Demo.Models
             else
                 service.RetrieveIncidents ()
                           .Where (i => i.Title.Contains (text, StringComparison.CurrentCultureIgnoreCase))
-                          .ForEach ((incident, index) => Incidents.Add (incident));  
+                          .ForEach ((incident, index) => Incidents.Add (incident));                    
         }
     }
-
 }

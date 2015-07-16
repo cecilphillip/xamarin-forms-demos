@@ -30,14 +30,7 @@ namespace XamarinForms.Incidents.Demo.Pages
 			};
 
             resetButton.Clicked += (sender, e) => ViewModel.ResetModel();
-		}
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing ();
-
-            //ViewModel.ResetModel ();
-        }
+		}                   
 	}
 }
 

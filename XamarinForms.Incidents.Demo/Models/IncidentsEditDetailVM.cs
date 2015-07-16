@@ -1,8 +1,5 @@
-using System.Collections.ObjectModel;
 using XamarinForms.Incidents.Demo.Services;
 using Xamarin.Forms;
-using System.Linq;
-using System;
 
 namespace XamarinForms.Incidents.Demo.Models
 {
@@ -17,8 +14,7 @@ namespace XamarinForms.Incidents.Demo.Models
             get { return model; }
             set { SetProperty (ref model, value, ModelPropertyName); }
         }
-
-
+            
         bool isVisible;
         public const string IsVisiblePropertyName = "IsVisible";
 
@@ -27,13 +23,9 @@ namespace XamarinForms.Incidents.Demo.Models
             set { SetProperty (ref isVisible, value, IsVisiblePropertyName); }
         }
 
-        public IncidentsEditDetailVM() : this (null, new SQLiteIncidentService())
-        {          
-        }
+        public IncidentsEditDetailVM() : this (null, new SQLiteIncidentService()) { }
 
-        public IncidentsEditDetailVM(Incident incident) : this (incident, new SQLiteIncidentService())
-        {          
-        }
+        public IncidentsEditDetailVM(Incident incident) : this (incident, new SQLiteIncidentService()) { }
 
         public IncidentsEditDetailVM(Incident incident, IIncidentService svc)
         {
@@ -43,13 +35,13 @@ namespace XamarinForms.Incidents.Demo.Models
             Model = incident?? new Incident();
          }  
 
-        public void SaveIncident() {
+        public virtual void SaveIncident() {
             service.UpdateIncident (model);
 
             MessagingCenter.Send<IncidentsEditDetailVM> (this, "incident-updated");
         }
 
-        public void ResetModel() {
+        public virtual void ResetModel() {
             Model = new Incident();
         }
     }

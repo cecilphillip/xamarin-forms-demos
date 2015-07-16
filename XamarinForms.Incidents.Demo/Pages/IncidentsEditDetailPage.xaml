@@ -18,14 +18,15 @@
                     <Label Text="Reported By:" FontSize="Small" />
                     <Entry Text="{Binding ReportedBy}" />
                 </StackLayout>
-                <StackLayout x:Name="dateStack">
-                    <Label Text="Event Date:" FontSize="Small" />
-                    <Label Text="{Binding DateOccurred, StringFormat='{0:d MMMM yyyy}'}" />
-                </StackLayout>
                 <StackLayout>
                     <Label Text="Event Location:" FontSize="Small" />
                     <Entry Text="{Binding Location}" />
                 </StackLayout>
+                <StackLayout x:Name="dateStack">
+                    <Label Text="Event Date:" FontSize="Small" />
+                    <Label Text="{Binding DateOccurred, StringFormat='{0:d MMMM yyyy}'}" />
+                </StackLayout>
+
                 <Button x:Name="saveButton" Text="Save" TextColor="White" BackgroundColor="#77D065" />
                 <Button x:Name="resetButton" Text="Reset" TextColor="White" BackgroundColor="#FF3050" />
           

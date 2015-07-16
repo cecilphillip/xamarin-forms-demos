@@ -47,7 +47,6 @@ namespace XamarinForms.Incidents.Demo.Pages
 
             };
 
-
             var stack = new StackLayout () {
                 Orientation = StackOrientation.Vertical,
                 Children = {

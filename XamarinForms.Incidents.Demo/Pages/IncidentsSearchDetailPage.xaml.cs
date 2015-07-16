@@ -25,6 +25,7 @@ namespace XamarinForms.Incidents.Demo.Pages
             incidentsSb.TextChanged += (sender, e) => LoadIncidents ();
 
             incidentsSb.SearchButtonPressed += (sender, e) => LoadIncidents ();
+            incidentsSb.BackgroundColor = Color.FromHex ("#3498DB");
 
             // wire up incidents ListView\
             incidentsLv.ItemSelected += async (sender, e) => {

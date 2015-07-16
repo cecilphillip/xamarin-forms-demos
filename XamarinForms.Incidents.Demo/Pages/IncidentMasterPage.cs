@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 
 using Xamarin.Forms;
-using System.Collections.Generic;
 using XamarinForms.Incidents.Demo.Models;
 
 namespace XamarinForms.Incidents.Demo.Pages

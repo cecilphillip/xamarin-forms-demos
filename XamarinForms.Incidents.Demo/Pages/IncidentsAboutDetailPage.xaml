@@ -3,15 +3,16 @@
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 x:Class="XamarinForms.Incidents.Demo.Pages.IncidentsAboutDetailPage"
 Title="About">
-    <ContentPage.Content>
-        <ScrollView>
+
+    <ContentPage.Content>        
             <StackLayout Orientation="Vertical" Spacing="10">
                
                 <StackLayout Spacing="10" Padding="10" VerticalOptions="FillAndExpand">
-                    <Label FontSize="Medium" Text=" Hi there. Welcome to the about page" LineBreakMode="WordWrap" />
+                    <Label FontSize="Medium" Text=" Hi there. Welcome to the about page" 
+                           LineBreakMode="WordWrap" HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand" />
                   
                 </StackLayout>
-            </StackLayout>
-        </ScrollView>
+            </StackLayout>       
     </ContentPage.Content>
 </ContentPage>

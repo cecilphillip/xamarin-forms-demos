@@ -10,7 +10,7 @@
                     WinPhone="0, 0, 0, 0" />
     </ContentPage.Padding>
 
-     <ContentPage.Content>
+    <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <Label Text="Incidents" 
                    HorizontalOptions="CenterAndExpand" />

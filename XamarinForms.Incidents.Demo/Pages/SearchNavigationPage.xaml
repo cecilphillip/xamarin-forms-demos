@@ -7,7 +7,8 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="TitleStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="Navy" />
+              
+                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style x:Key="DetailStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="Gray" />
